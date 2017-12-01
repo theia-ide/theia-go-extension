@@ -7,14 +7,16 @@ import { GoMenuContribution } from './go-menu-contribution';
  */
 
 import { ContainerModule } from "inversify";
-import { LanguageClientContribution } from "@theia/languages/lib/browser";
+import { LanguageClientContribution, Commands } from "@theia/languages/lib/browser";
 import { GoClientContribution } from "./go-client-contribution";
-import { MenuContribution } from '@theia/core';
+import { GoCommandContribution } from "./go-command-contribution";
+import { MenuContribution, CommandContribution } from '@theia/core';
+import { GoCommands } from './go-commands';
+import { interfaces } from 'inversify';
 
-export default new ContainerModule(bind => {
-    bind(GoClientContribution).toSelf().inSingletonScope();
-    bind(LanguageClientContribution).toDynamicValue(ctx => ctx.container.get(GoClientContribution));
-    bind(GoMenuContribution).toSelf().inSingletonScope();
-    bind(MenuContribution).toDynamicValue(ctx => ctx.container.get(GoMenuContribution));
+export default new ContainerModule((bind: interfaces.Bind, unbind: interfaces.Unbind, isBound: interfaces.IsBound, rebind: interfaces.Rebind) => {
+    bind(LanguageClientContribution).to(GoClientContribution).inSingletonScope();
+    bind(MenuContribution).to(GoMenuContribution).inSingletonScope();
+    bind(CommandContribution).to(GoCommandContribution).inSingletonScope();
 });
 
