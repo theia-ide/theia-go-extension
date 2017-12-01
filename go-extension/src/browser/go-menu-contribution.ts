@@ -37,5 +37,17 @@ export class GoMenuContribution implements MenuContribution {
             commandId : "go.test.generate.function",
             label : "Go: Generate Unit Tests For Function"
         })
+        menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
+            commandId : "go.get.package",
+            label : "Go: Get Package"
+        })
+        menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
+            commandId : "go.add.tags",
+            label :"Go: Add Tags To Struct Fields"
+        })
+        menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
+            commandId : "go.remove.tags",
+            label : "Go: Remove Tags From Struct Fields"
+        })
     }
 }
