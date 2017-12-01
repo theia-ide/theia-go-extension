@@ -25,5 +25,17 @@ export class GoMenuContribution implements MenuContribution {
             commandId : "go.vet.workspace",
             label : "Go: Vet Workspace"
         })
+        menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
+            commandId : "go.test.generate.package",
+            label : "Go: Generate Unit Tests For Package"
+        })
+        menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
+            commandId : "go.test.generate.file",
+            label : "Go: Generate Unit Tests For File"
+        })
+        menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
+            commandId : "go.test.generate.function",
+            label : "Go: Generate Unit Tests For Function"
+        })
     }
 }
