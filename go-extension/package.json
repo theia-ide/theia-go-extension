@@ -1,5 +1,5 @@
 {
-  "name": "@theia/go",
+  "name": "go-extension",
   "keywords": [
     "theia-extension"
   ],
