@@ -49,5 +49,10 @@ export class GoMenuContribution implements MenuContribution {
             commandId : "go.remove.tags",
             label : "Go: Remove Tags From Struct Fields"
         })
+        menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
+            commandId: "go.playground",
+            label: "Go: Run on Go Playground"
+        })
     }
 }
+
