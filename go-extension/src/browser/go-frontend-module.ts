@@ -18,5 +18,8 @@ export default new ContainerModule((bind: interfaces.Bind, unbind: interfaces.Un
     bind(LanguageClientContribution).to(GoClientContribution).inSingletonScope();
     bind(MenuContribution).to(GoMenuContribution).inSingletonScope();
     bind(CommandContribution).to(GoCommandContribution).inSingletonScope();
+    if (isBound(Commands))
+        unbind(Commands);
+    bind(Commands).to(GoCommands).inSingletonScope();
 });
 
