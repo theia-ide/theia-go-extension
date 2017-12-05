@@ -9,7 +9,7 @@
     "lerna": "2.4.0"
   },
   "workspaces": [
-    "go-extension",
+    "go",
     "browser-app",
     "electron-app"
   ]

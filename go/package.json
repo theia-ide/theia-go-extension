@@ -1,5 +1,6 @@
 {
-  "name": "go-extension",
+  "name": "@theia/go",
+  "description": "Go support for the Theia IDE",
   "license": "Apache-2.0",
   "keywords": [
     "theia-extension"
