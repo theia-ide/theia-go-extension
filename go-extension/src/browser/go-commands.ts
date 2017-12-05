@@ -6,6 +6,37 @@ import { CommandRegistry } from "@theia/core";
 @injectable()
 export class GoCommands extends DefaultCommands {
 
+    private readonly titles: { [key: string]: string } = {
+        "go.gopath": "Current GOPATH",
+        "go.add.tags": "Add Tags To Struct Fields",
+        "go.remove.tags": "Remove Tags From Struct Fields",
+        "go.impl.cursor": "Generate Interface Stubs",
+        "go.test.cursor": "Test Function At Cursor",
+        "go.benchmark.cursor": "Benchmark Function At Cursor",
+        "go.test.package": "Test Package",
+        "go.test.file": "Test File",
+        "go.test.workspace": "Test All Packages In Workspace",
+        "go.test.previous": "Test Previous",
+        "go.test.coverage": "Toggle Test Coverage In Current Package",
+        "go.import.add": "Add Import",
+        "go.tools.install": "Install/Update Tools",
+        "go.browse.packages": "Browse Packages",
+        "go.test.generate.package": "Generate Unit Tests For Package",
+        "go.test.generate.file": "Generate Unit Tests For File",
+        "go.test.generate.function": "Generate Unit Tests For Function",
+        "go.toggle.test.file": "Toggle Test File",
+        "go.show.commands": "Show All Commands...",
+        "go.get.package": "Get Package",
+        "go.playground": "Run on Go Playground",
+        "go.lint.package": "Lint Current Package",
+        "go.lint.workspace": "Lint Workspace",
+        "go.vet.package": "Vet Current Package",
+        "go.vet.workspace": "Vet Workspace",
+        "go.build.package": "Build Current Package",
+        "go.build.workspace": "Build Workspace",
+        "go.install.package": "Install Current Package"
+    }
+
     constructor(@inject(CommandRegistry) commandRegistry: CommandRegistry,
                 @inject(EditorManager) private editorManager: EditorManager) {
         super(commandRegistry)
@@ -13,7 +44,7 @@ export class GoCommands extends DefaultCommands {
 
     registerCommand(id: string, callback: (...args: any[]) => any, thisArg?: any): Disposable {
         const boundCallback = callback.bind(thisArg);
-        return this.registry.registerCommand({ id: id }, {
+        return this.registry.registerCommand({ id: id, label: this.getTitle(id) }, {
             execute: (...args: any[]) => {
                 const currentEditor = this.editorManager.currentEditor
                 if (this.isGoEditor(currentEditor)) {
@@ -32,4 +63,9 @@ export class GoCommands extends DefaultCommands {
             return false;
     }
 
+    private getTitle(commandId: string): string | undefined {
+        const title = this.titles[commandId]
+        return title ? 'Go: ' + title : undefined
+    }
 }
+
