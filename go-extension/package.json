@@ -1,5 +1,6 @@
 {
   "name": "go-extension",
+  "license": "Apache-2.0",
   "keywords": [
     "theia-extension"
   ],
