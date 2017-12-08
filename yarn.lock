@@ -645,6 +645,10 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+better-curry@1.x.x:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/better-curry/-/better-curry-1.6.0.tgz#38f716b24c8cee07a262abc41c22c314e20e3869"
+
 big.js@^3.1.3:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-3.2.0.tgz#a5fc298b81b9e0dca2e458824784b65c52ba588e"
@@ -1074,6 +1078,14 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
 
+console-stamp@^0.2.2:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/console-stamp/-/console-stamp-0.2.6.tgz#9aa21b945b788d639ce3d1f9b1cd1c5a7ecc96c0"
+  dependencies:
+    chalk "^1.1.1"
+    dateformat "^1.0.11"
+    merge "^1.2.0"
+
 constants-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/constants-browserify/-/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
@@ -1449,7 +1461,7 @@ dateformat@^1.0.11, dateformat@^1.0.12:
     get-stdin "^4.0.1"
     meow "^3.3.0"
 
-debug@2.6.9, debug@^2.1.3, debug@^2.2.0, debug@^2.5.1, debug@^2.6.3:
+debug@2.6.9, debug@2.x.x, debug@^2.1.3, debug@^2.2.0, debug@^2.5.1, debug@^2.6.3:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -1511,6 +1523,10 @@ detect-indent@^5.0.0:
 detect-libc@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
+
+diff@~3.3.0:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/diff/-/diff-3.3.1.tgz#aa8567a6eed03c531fc89d3f711cd0e5259dec75"
 
 diffie-hellman@^5.0.0:
   version "5.0.2"
@@ -1638,6 +1654,12 @@ error-ex@^1.2.0, error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
+es5class@2.x.x:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/es5class/-/es5class-2.3.1.tgz#42c5c18a9016bcb0db28a4d340ebb831f55d1b66"
+  dependencies:
+    better-curry "1.x.x"
+
 es6-promise@^4.0.5:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.1.1.tgz#8811e90915d9a0dba36274f0b242dbda78f9c92a"
@@ -1665,6 +1687,10 @@ esutils@^2.0.2:
 etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
+
+eventemitter3@1.x.x:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
 
 events@^1.0.0:
   version "1.1.1"
@@ -1815,6 +1841,12 @@ fast-json-stable-stringify@^2.0.0:
 fastparse@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/fastparse/-/fastparse-1.1.1.tgz#d1e2643b38a94d7583b479060e6c4affc94071f8"
+
+faye-websocket@0.x.x:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/faye-websocket/-/faye-websocket-0.11.1.tgz#f0efe18c4f56e4f40afc7e06c719fd5ee6188f38"
+  dependencies:
+    websocket-driver ">=0.5.1"
 
 fd-slicer@~1.0.1:
   version "1.0.1"
@@ -2140,6 +2172,22 @@ globby@^7.1.1:
     pify "^3.0.0"
     slash "^1.0.0"
 
+go-language-server@latest:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/go-language-server/-/go-language-server-0.1.1.tgz#b5f78039b4b3f481a2fb0e6ce9affd880bda9b52"
+  dependencies:
+    command-exists "^1.2.2"
+    commander "^2.11.0"
+    console-stamp "^0.2.2"
+    diff "~3.3.0"
+    fs-extra "^4.0.2"
+    json-rpc2 "^1.0.2"
+    pkginfo "^0.4.1"
+    vscode-debugprotocol "^1.11.0"
+    vscode-languageclient "^2.5.0"
+    vscode-languageserver "^3.5.0"
+    vscode-uri "^1.0.1"
+
 graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
@@ -2278,6 +2326,10 @@ http-errors@1.6.2, http-errors@~1.6.2:
 http-https@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/http-https/-/http-https-1.0.0.tgz#2f908dd5f1db4068c058cd6e6d4ce392c913389b"
+
+http-parser-js@>=0.4.0:
+  version "0.4.9"
+  resolved "https://registry.yarnpkg.com/http-parser-js/-/http-parser-js-0.4.9.tgz#ea1a04fb64adff0242e9974f297dd4c3cad271e1"
 
 http-signature@~1.1.0:
   version "1.1.1"
@@ -2596,6 +2648,18 @@ json-loader@^0.5.4:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/json-loader/-/json-loader-0.5.7.tgz#dca14a70235ff82f0ac9a3abeb60d337a365185d"
 
+json-rpc2@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/json-rpc2/-/json-rpc2-1.0.2.tgz#eb77bd27b1df606c23702c4e35d4afc54742ae8d"
+  dependencies:
+    debug "2.x.x"
+    es5class "2.x.x"
+    eventemitter3 "1.x.x"
+    faye-websocket "0.x.x"
+    jsonparse "1.x.x"
+    lodash "3.x.x"
+    object-assign "4.x"
+
 json-schema-traverse@^0.3.0:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/json-schema-traverse/-/json-schema-traverse-0.3.1.tgz#349a6d44c53a51de89b40805c5d5e59b417d3340"
@@ -2644,7 +2708,7 @@ jsonify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
 
-jsonparse@^1.2.0:
+jsonparse@1.x.x, jsonparse@^1.2.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/jsonparse/-/jsonparse-1.3.1.tgz#3f4dae4a91fac315f71062f8521cc239f1366280"
 
@@ -2843,6 +2907,10 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
+lodash@3.x.x:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+
 lodash@^4.0.0, lodash@^4.1.0, lodash@^4.14.0, lodash@^4.17.4, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
@@ -2931,6 +2999,10 @@ meow@^3.1.0, meow@^3.3.0, meow@^3.7.0:
 merge-descriptors@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
+
+merge@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
 
 methods@~1.1.2:
   version "1.1.2"
@@ -3292,7 +3364,7 @@ oauth-sign@~0.8.1, oauth-sign@~0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
-object-assign@^4.0.1, object-assign@^4.1.0:
+object-assign@4.x, object-assign@^4.0.1, object-assign@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
@@ -3528,6 +3600,10 @@ pinkie-promise@^2.0.0, pinkie-promise@^2.0.1:
 pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
+
+pkginfo@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/pkginfo/-/pkginfo-0.4.1.tgz#b5418ef0439de5425fc4995042dced14fb2a84ff"
 
 postcss-calc@^5.2.0:
   version "5.3.1"
@@ -4849,9 +4925,24 @@ vscode-base-languageclient@^0.0.1-alpha.2, vscode-base-languageclient@^0.0.1-alp
     vscode-languageserver-types "^3.2.0"
     vscode-uri "^1.0.0"
 
+vscode-debugprotocol@^1.11.0:
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/vscode-debugprotocol/-/vscode-debugprotocol-1.25.0.tgz#7a7e38df4cad8839e37ebcd06ed903902d97a7e3"
+
+vscode-jsonrpc@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/vscode-jsonrpc/-/vscode-jsonrpc-2.4.0.tgz#51396030e13179555c939b791c29598058b8fbb4"
+
 vscode-jsonrpc@^3.2.0, vscode-jsonrpc@^3.3.0, vscode-jsonrpc@^3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/vscode-jsonrpc/-/vscode-jsonrpc-3.5.0.tgz#87239d9e166b2d7352245b8a813597804c1d63aa"
+
+vscode-languageclient@^2.5.0:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/vscode-languageclient/-/vscode-languageclient-2.6.3.tgz#9a35f5955464588d966895313f5164ce9b184f3f"
+  dependencies:
+    vscode-jsonrpc "^2.4.0"
+    vscode-languageserver-types "^1.0.4"
 
 vscode-languageserver-protocol@^3.5.0:
   version "3.5.0"
@@ -4860,11 +4951,15 @@ vscode-languageserver-protocol@^3.5.0:
     vscode-jsonrpc "^3.5.0"
     vscode-languageserver-types "^3.5.0"
 
+vscode-languageserver-types@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/vscode-languageserver-types/-/vscode-languageserver-types-1.0.4.tgz#439a52f040c89cf6599d88ed9a1b5a9abdca11b7"
+
 vscode-languageserver-types@^3.2.0, vscode-languageserver-types@^3.4.0, vscode-languageserver-types@^3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/vscode-languageserver-types/-/vscode-languageserver-types-3.5.0.tgz#e48d79962f0b8e02de955e3f524908e2b19c0374"
 
-vscode-languageserver@^3.4.0, vscode-languageserver@^3.4.3:
+vscode-languageserver@^3.4.0, vscode-languageserver@^3.4.3, vscode-languageserver@^3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/vscode-languageserver/-/vscode-languageserver-3.5.0.tgz#d28099bc6ddda8c1dd16b707e454e1b1ddae0dba"
   dependencies:
@@ -4927,6 +5022,17 @@ webpack@^2.2.1:
     watchpack "^1.3.1"
     webpack-sources "^1.0.1"
     yargs "^6.0.0"
+
+websocket-driver@>=0.5.1:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/websocket-driver/-/websocket-driver-0.7.0.tgz#0caf9d2d755d93aee049d4bdd0d3fe2cca2a24eb"
+  dependencies:
+    http-parser-js ">=0.4.0"
+    websocket-extensions ">=0.1.1"
+
+websocket-extensions@>=0.1.1:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
 
 whet.extend@~0.9.9:
   version "0.9.9"
