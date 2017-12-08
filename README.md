@@ -1,5 +1,6 @@
-# Hello World Extension Example
-The example of how to build the Theia-based applications with the go-extension.
+# Theia Go Extension
+
+An extension for the Theia-IDE to support the Go language, using the [Go language server](https://github.com/theia-ide/go-language-server).
 
 ## Getting started
 
