@@ -5,13 +5,14 @@
   "keywords": [
     "theia-extension"
   ],
-  "version": "0.0.0",
+  "version": "0.3.2",
   "files": [
     "lib",
     "src"
   ],
   "dependencies": {
-    "@theia/core": "latest"
+    "@theia/core": "latest",
+    "go-language-server": "latest"
   },
   "devDependencies": {
     "rimraf": "latest",
