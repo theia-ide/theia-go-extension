@@ -11,8 +11,8 @@
     "src"
   ],
   "dependencies": {
-    "@theia/core": "latest",
-    "go-language-server": "latest"
+    "@theia/core": "^0.3.0",
+    "go-language-server": "^0.1.0"
   },
   "devDependencies": {
     "rimraf": "latest",
