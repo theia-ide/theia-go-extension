@@ -13,6 +13,7 @@
     "@theia/editor": "latest",
     "@theia/languages": "latest",
     "@theia/markers": "latest",
+    "@theia/messages": "latest",
     "@theia/monaco": "latest",
     "@theia/typescript": "latest",
     "@theia/go": "0.0.0"
