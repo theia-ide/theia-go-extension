@@ -18,7 +18,8 @@ export class GoContribution extends BaseLanguageServerContribution {
     start(clientConnection: IConnection): void {
         const command = "node";
         const args: string[] = [
-            '--inspect',
+			// '--inspect',
+			//'--inspect-brk',
             __dirname + "/startserver.js",
             '--stdio'
         ];
