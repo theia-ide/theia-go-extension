@@ -5,10 +5,10 @@
   "keywords": [
     "theia-extension"
   ],
-  "version": "0.3.4",
+  "version": "0.3.5",
   "files": [
     "lib",
-	"src"
+    "src"
   ],
   "dependencies": {
     "@theia/core": "^0.3.0",
