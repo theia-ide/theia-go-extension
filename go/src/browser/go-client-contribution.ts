@@ -6,8 +6,9 @@
  */
 
 import { injectable, inject } from "inversify";
-import { BaseLanguageClientContribution, Workspace, Languages, LanguageClientFactory } from '@theia/languages/lib/browser';
+import { BaseLanguageClientContribution, Workspace, Languages, LanguageClientFactory, LogMessageNotification } from '@theia/languages/lib/browser';
 import { GO_LANGUAGE_ID, GO_LANGUAGE_NAME } from '../common';
+import { LogModel } from "./logview/log-model";
 
 @injectable()
 export class GoClientContribution extends BaseLanguageClientContribution {
@@ -18,9 +19,11 @@ export class GoClientContribution extends BaseLanguageClientContribution {
     constructor(
         @inject(Workspace) protected readonly workspace: Workspace,
         @inject(Languages) protected readonly languages: Languages,
-        @inject(LanguageClientFactory) protected readonly languageClientFactory: LanguageClientFactory
+		@inject(LanguageClientFactory) protected readonly languageClientFactory: LanguageClientFactory,
+		@inject(LogModel) protected readonly logModel: LogModel
     ) {
-        super(workspace, languages, languageClientFactory);
+		super(workspace, languages, languageClientFactory);
+		this.languageClient.then(client => client.onNotification(LogMessageNotification.type, this.logModel.log.bind(this.logModel)))
     }
 
     protected get globPatterns() {

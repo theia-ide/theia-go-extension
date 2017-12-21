@@ -125,13 +125,13 @@
     webpack "^2.2.1"
     write-json-file "^2.2.0"
 
-"@theia/cli@latest":
+"@theia/cli@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@theia/cli/-/cli-0.3.0.tgz#5b4f76a2f77ecb38e7f16c0132b05818e0113f1d"
   dependencies:
     "@theia/application-package" "^0.3.0"
 
-"@theia/core@^0.3.0", "@theia/core@latest":
+"@theia/core@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@theia/core/-/core-0.3.0.tgz#cba78990a9bea887c671f633695ef45761420ec4"
   dependencies:
@@ -157,7 +157,7 @@
     ws "^3.0.0"
     yargs "^9.0.1"
 
-"@theia/editor@^0.3.1", "@theia/editor@latest":
+"@theia/editor@^0.3.0", "@theia/editor@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@theia/editor/-/editor-0.3.1.tgz#02b92ba4a5ebf633ed9668bb7acd69113cba73c2"
   dependencies:
@@ -165,7 +165,7 @@
     "@theia/languages" "^0.3.1"
     "@theia/preferences-api" "^0.3.0"
 
-"@theia/filesystem@^0.3.0", "@theia/filesystem@latest":
+"@theia/filesystem@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@theia/filesystem/-/filesystem-0.3.0.tgz#17af4be5759328237fd52522cea0f47804b95685"
   dependencies:
@@ -179,7 +179,7 @@
     touch "^3.1.0"
     trash "^4.0.1"
 
-"@theia/languages@^0.3.1", "@theia/languages@latest":
+"@theia/languages@^0.3.0", "@theia/languages@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@theia/languages/-/languages-0.3.1.tgz#5b6c9957da6985d989020dd8d1e687412c51be74"
   dependencies:
@@ -188,7 +188,7 @@
     vscode-base-languageclient "^0.0.1-alpha.3"
     vscode-languageserver "^3.4.0"
 
-"@theia/markers@^0.3.0", "@theia/markers@latest":
+"@theia/markers@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@theia/markers/-/markers-0.3.0.tgz#0e2c6e9ea3feffaef3897998abcbc48cf7cfd5dc"
   dependencies:
@@ -196,13 +196,13 @@
     "@theia/filesystem" "^0.3.0"
     "@theia/workspace" "^0.3.0"
 
-"@theia/messages@latest":
+"@theia/messages@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@theia/messages/-/messages-0.3.0.tgz#0caaa5c1d6bbf1130445392e9d7861214435ef06"
   dependencies:
     "@theia/core" "^0.3.0"
 
-"@theia/monaco@^0.3.1", "@theia/monaco@latest":
+"@theia/monaco@^0.3.0", "@theia/monaco@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@theia/monaco/-/monaco-0.3.1.tgz#ac1e76ff1af677469b46260b814886cd440096d0"
   dependencies:
@@ -220,7 +220,7 @@
     monaco-languageclient "^0.2.0"
     monaco-languages "^0.9.0"
 
-"@theia/navigator@latest":
+"@theia/navigator@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@theia/navigator/-/navigator-0.3.0.tgz#13b3d751b38eb007407c580cd11c289be07f075a"
   dependencies:
@@ -240,7 +240,7 @@
   dependencies:
     "@theia/core" "^0.3.0"
 
-"@theia/preferences@^0.3.0", "@theia/preferences@latest":
+"@theia/preferences@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@theia/preferences/-/preferences-0.3.0.tgz#b58ed1a6e8840e04d06df7f8e87f59db39befe39"
   dependencies:
@@ -253,7 +253,7 @@
     fs-extra "^4.0.2"
     jsonc-parser "^1.0.0"
 
-"@theia/process@^0.3.0", "@theia/process@latest":
+"@theia/process@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@theia/process/-/process-0.3.0.tgz#4f7387675d8a4f007e9ca865bfcbfc38b85cdd03"
   dependencies:
@@ -261,7 +261,7 @@
     node-pty "^0.7.0"
     string-argv "0.0.2"
 
-"@theia/terminal@latest":
+"@theia/terminal@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@theia/terminal/-/terminal-0.3.0.tgz#6b4377ae817afe381af984840bfd90ff4ec41b6f"
   dependencies:
@@ -272,7 +272,7 @@
     "@types/xterm" "^2.0.3"
     xterm theia-ide/xterm.js#v3-built
 
-"@theia/typescript@latest":
+"@theia/typescript@^0.3.0":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@theia/typescript/-/typescript-0.3.1.tgz#4575ed0af7fbc576bcc68eb9fbbafb7fd762e691"
   dependencies:
@@ -282,7 +282,7 @@
     monaco-typescript "^2.2.0"
     typescript-language-server "^0.1.4"
 
-"@theia/workspace@^0.3.0", "@theia/workspace@latest":
+"@theia/workspace@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@theia/workspace/-/workspace-0.3.0.tgz#1327b45474d683e994504379e09da0d1edcbe947"
   dependencies:
@@ -2172,7 +2172,7 @@ globby@^7.1.1:
     pify "^3.0.0"
     slash "^1.0.0"
 
-go-language-server@latest:
+go-language-server@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/go-language-server/-/go-language-server-0.1.1.tgz#b5f78039b4b3f481a2fb0e6ce9affd880bda9b52"
   dependencies:
@@ -5141,7 +5141,7 @@ xtend@~2.1.1:
   dependencies:
     object-keys "~0.4.0"
 
-"xterm@github:theia-ide/xterm.js#v3-built":
+xterm@theia-ide/xterm.js#v3-built:
   version "2.9.1"
   resolved "https://codeload.github.com/theia-ide/xterm.js/tar.gz/e2aca68c8d5a64320d26b889d2c8d3f4510d4805"
 

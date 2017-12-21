@@ -1,4 +1,3 @@
-import { GoMenuContribution } from './go-menu-contribution';
 /*
  * Copyright (C) 2017 TypeFox and others.
  *
@@ -13,6 +12,8 @@ import { GoCommandContribution } from "./go-command-contribution";
 import { MenuContribution, CommandContribution } from '@theia/core';
 import { GoCommands } from './go-commands';
 import { interfaces } from 'inversify';
+import { GoMenuContribution } from './go-menu-contribution';
+import logViewContainerModule from './logview/log-view-module';
 
 export default new ContainerModule((bind: interfaces.Bind, unbind: interfaces.Unbind, isBound: interfaces.IsBound, rebind: interfaces.Rebind) => {
     bind(LanguageClientContribution).to(GoClientContribution).inSingletonScope();
@@ -20,6 +21,7 @@ export default new ContainerModule((bind: interfaces.Bind, unbind: interfaces.Un
     bind(CommandContribution).to(GoCommandContribution).inSingletonScope();
     if (isBound(Commands))
         unbind(Commands);
-    bind(Commands).to(GoCommands).inSingletonScope();
+	bind(Commands).to(GoCommands).inSingletonScope();
+	logViewContainerModule.registry(bind, unbind, isBound, rebind);
 });
 
