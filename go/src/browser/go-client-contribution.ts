@@ -6,8 +6,10 @@
  */
 
 import { injectable, inject } from "inversify";
+import { Disposable } from "@theia/core";
 import { BaseLanguageClientContribution, Workspace, Languages, LanguageClientFactory, LogMessageNotification } from '@theia/languages/lib/browser';
 import { GO_LANGUAGE_ID, GO_LANGUAGE_NAME } from '../common';
+import { GoCommands } from "./go-commands";
 import { LogModel } from "./logview/log-model";
 
 @injectable()
@@ -20,6 +22,7 @@ export class GoClientContribution extends BaseLanguageClientContribution {
         @inject(Workspace) protected readonly workspace: Workspace,
         @inject(Languages) protected readonly languages: Languages,
 		@inject(LanguageClientFactory) protected readonly languageClientFactory: LanguageClientFactory,
+		@inject(GoCommands) protected readonly commands: GoCommands,
 		@inject(LogModel) protected readonly logModel: LogModel
     ) {
 		super(workspace, languages, languageClientFactory);
@@ -30,6 +33,10 @@ export class GoClientContribution extends BaseLanguageClientContribution {
         return [
             '**/*.go'
         ];
-    }
+	}
+	
+	registerCommand(id: string, callback: (...args: any[]) => any, thisArg?: any): Disposable {
+		return this.commands.registerCommand(id, callback, thisArg);
+	}
 }
 

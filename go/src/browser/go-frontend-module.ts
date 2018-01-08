@@ -6,7 +6,7 @@
  */
 
 import { ContainerModule } from "inversify";
-import { LanguageClientContribution, Commands } from "@theia/languages/lib/browser";
+import { LanguageClientContribution } from "@theia/languages/lib/browser";
 import { GoClientContribution } from "./go-client-contribution";
 import { GoCommandContribution } from "./go-command-contribution";
 import { MenuContribution, CommandContribution } from '@theia/core';
@@ -19,9 +19,7 @@ export default new ContainerModule((bind: interfaces.Bind, unbind: interfaces.Un
     bind(LanguageClientContribution).to(GoClientContribution).inSingletonScope();
     bind(MenuContribution).to(GoMenuContribution).inSingletonScope();
     bind(CommandContribution).to(GoCommandContribution).inSingletonScope();
-    if (isBound(Commands))
-        unbind(Commands);
-	bind(Commands).to(GoCommands).inSingletonScope();
+	bind(GoCommands).to(GoCommands).inSingletonScope();
 	logViewContainerModule.registry(bind, unbind, isBound, rebind);
 });
 
