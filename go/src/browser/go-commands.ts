@@ -5,13 +5,13 @@
  * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
  */
 
- import { DefaultCommands, Disposable } from "@theia/languages/lib/browser";
+ import { Disposable } from "@theia/languages/lib/browser";
 import { injectable, inject } from "inversify";
 import { EditorManager, EditorWidget } from "@theia/editor/lib/browser";
 import { CommandRegistry } from "@theia/core";
 
 @injectable()
-export class GoCommands extends DefaultCommands {
+export class GoCommands {
 
     private readonly titles: { [key: string]: string } = {
         "go.gopath": "Current GOPATH",
@@ -44,9 +44,8 @@ export class GoCommands extends DefaultCommands {
         "go.install.package": "Install Current Package"
     }
 
-    constructor(@inject(CommandRegistry) commandRegistry: CommandRegistry,
+    constructor(@inject(CommandRegistry) private registry: CommandRegistry,
                 @inject(EditorManager) private editorManager: EditorManager) {
-        super(commandRegistry)
     }
 
     registerCommand(id: string, callback: (...args: any[]) => any, thisArg?: any): Disposable {
