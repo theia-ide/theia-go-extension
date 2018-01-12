@@ -10,9 +10,6 @@ cache:
 branches:
   only:
   - master
-env:
-  global:
-    secure: evtK3IWosNexQyyYcPo78LZptm4hXH9gkzVFxVWDFuFy1sPIE1Z/3G3SKdBbGmvnJQs2ATIYfc3CUnCKUMJN4aNtJv8jFcc+p6QMN60Yve/6UsDFrTPrV8uQBVJEkP1NwOWqWnamO+WM0RW6t0kp0yHPx0U7w9ndFnVhbHgveFpDXJobharxefH2FoBDp6WDt/R3U8o17sHm23hE7rK7kNx4mytbmdWKl/EJ7H/KQsoPw/hf9KdyOFIxTzVwLjbxg0ySmYtY0BGqIUCAhqqvEdvgJd+w4Fn+ZEwmK3esNDbc47HGN/x9MlnX32DBDyzXGThi5Is8wezcFxmNOY8IAU0Y6CN6tu0T+5ZIBEwDQAKZCoLzEotRetqKZoh2WTADeiTlyR8GvAClP6ahPtoCRx3je/gAEbWwbV77yB4n5nGkfOn3Xu9JTz3Rukd/dJ4+pPo6RAHA5V/UXoDDqrwjw/GVMkwqs31E+8b/PJsVYF58h3UAR/W1g25xatb+1QF14zeq3U4e20v4/xBw5HTT24jX42aJ1lBK2f9EAiBde9Hwxl3RA5+cvIHi09Xc/2z8Rn8B4hf8ZymltP8tPpbjHZGz8V47TVnfpbUAvh7PHiOOOtYc6XX0LcbA73dhvalYzgZMaGSe+rfW8BEcDEQK1uU5YK4ar/JN2rGzfHABkoI=
 install:
 - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.2.1
 - export PATH=$HOME/.yarn/bin:$PATH ;
@@ -33,3 +30,6 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
+env:
+  global:
+    secure: EwRE9P4vFT3Y8KoM60xh5WifKok13V+NUa6RfYy/dRS1cHrogpGBmbE8Sqrun4gMi/yoABIxvU9XTjqwwPPdHGbF3GTbrpcoCbXuK8//FwGsR74zMsI5J/lyb0GdrMRH+LLb6PirmcOdyVw9FcXK1AU//PbFuDPCA+WG9fSYy3p+2khjg1iLWKlOAeWjauOJKFkaQ+xQal/W0Jl1MOX8a2eb9K6bLxJz6nZPRdq6ytBSjUQLL/glIB8iHQS4XssMuqW/CMksmYmo0lTCN3Ic5uADvUGOebiRfdFxFAlfFRRax+YUtxmFOlkyToQjH12O68yD8kNnQj5/gKExE7jksQLZpM7Ncn6NyTbXronjnkwq38W3Cs2OD6wZohjcB8tlUlILIsgXXl69Vw0MLBeT2fpo46pGYTnhY00beshHdQBZZ4Mix1UkT0c0d0dfYnjzvOAu9xSxMxI/OdbHxu/p9TTHdszj22Vgwu+EZKpAelhGZSH+Y4L5orj2CzsEfpK5MJh1hrAFAe8zt9Akbn+PCXjOkP8dFV6+j0O7O7ZXPauLtieYCwC1o4Aia3RAZ3sf4kLIOXR+TxaAdTReX+Vx2XPHi6GyD4mhDh2pd5gjJ7n9s4W7WCwWfPlht9teubGWVhKCXDHH38fbBeO5LM+ICbVUVkoQHZ2ifjOkTVYh32c=
