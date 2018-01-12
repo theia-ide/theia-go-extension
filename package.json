@@ -8,7 +8,7 @@
 	"publish:next": "lerna publish --registry=https://registry.npmjs.org/ --exact --canary=next --npm-tag=next --force-publish --skip-git --yes"
   },
   "devDependencies": {
-    "lerna": "2.7.0"
+    "lerna": "2.6.0"
   },
   "workspaces": [
     "go",
