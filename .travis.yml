@@ -12,12 +12,12 @@ branches:
   - master
 env:
   global:
-    - secure: es511klr3A8rLVIQ+ZxWkYl2/OLaZYzHpLH94O0EqFDC05t7sk76WOD+9fVT0jkINUKt7sK4Nozv19GmNYxFVXKaWwAH9jt7sHKYgbfCr+vTg58z9jyposMZSGEgsGPSbFn5DxPS7KdWbfQDEjxX18yiKMKN9k+7XwkC8p+WSgy4I30M5Y4YXffQooEwjqJpTdkpOm6p+o6t99mp3ufaxG5VOLtSwsZ0r3cKJo0rbqKxJGA62eNYLYksQ7PsFHDE2stQ8IDxFNXOrXB6ocwwd7KGphJIofU/t1UCXjpsGn0Ozr4LYvSpvl9nKQBmA3prKuAOnygLZh0YfYACIoIpBFa0/igxdX7j7INgp50Q+6CHRWwCb+YqZPgJ297EZi5mVKYNlAh0OeKKTo0NanunWR2pnzj29MGzR40wJqPVhQBRQvaKannwpoY5opK8MWi9jnDDY3xpzgZ8na3yOkw9wQ+a2nUm13BZnWmMDODGnaf9vy9eQ7bB26eiU2VSHlNWeniqDMY81sjqBlst22bHR4IgsI4qkh5UXMyyvMKbXltUIXERdCv1yK/Faa/VJ0Qrs+mk+G23bkT8/1f6cHBhjiVJX5HhXLcN3lHxImi+K9NkuCn8g+okX+SfD2lT5OPpRYHS8Jb51frNUIDWqWqRcjCioNjcuup2o6nbTlJaFb0=
+    secure: evtK3IWosNexQyyYcPo78LZptm4hXH9gkzVFxVWDFuFy1sPIE1Z/3G3SKdBbGmvnJQs2ATIYfc3CUnCKUMJN4aNtJv8jFcc+p6QMN60Yve/6UsDFrTPrV8uQBVJEkP1NwOWqWnamO+WM0RW6t0kp0yHPx0U7w9ndFnVhbHgveFpDXJobharxefH2FoBDp6WDt/R3U8o17sHm23hE7rK7kNx4mytbmdWKl/EJ7H/KQsoPw/hf9KdyOFIxTzVwLjbxg0ySmYtY0BGqIUCAhqqvEdvgJd+w4Fn+ZEwmK3esNDbc47HGN/x9MlnX32DBDyzXGThi5Is8wezcFxmNOY8IAU0Y6CN6tu0T+5ZIBEwDQAKZCoLzEotRetqKZoh2WTADeiTlyR8GvAClP6ahPtoCRx3je/gAEbWwbV77yB4n5nGkfOn3Xu9JTz3Rukd/dJ4+pPo6RAHA5V/UXoDDqrwjw/GVMkwqs31E+8b/PJsVYF58h3UAR/W1g25xatb+1QF14zeq3U4e20v4/xBw5HTT24jX42aJ1lBK2f9EAiBde9Hwxl3RA5+cvIHi09Xc/2z8Rn8B4hf8ZymltP8tPpbjHZGz8V47TVnfpbUAvh7PHiOOOtYc6XX0LcbA73dhvalYzgZMaGSe+rfW8BEcDEQK1uU5YK4ar/JN2rGzfHABkoI=
 install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.2.1
-  - export PATH=$HOME/.yarn/bin:$PATH ;
+- curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.2.1
+- export PATH=$HOME/.yarn/bin:$PATH ;
 script:
-  - yarn
+- yarn
 notifications:
   webhooks:
     urls:
@@ -26,8 +26,10 @@ notifications:
     on_failure: always
     on_start: never
 before_deploy:
-  - printf "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}\n" >> ~/.npmrc
+- printf "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}\n" >> ~/.npmrc
 deploy:
-  skip_cleanup: true
+  provider: script
   script: yarn run publish:next
-
+  skip_cleanup: true
+  on:
+    branch: master
