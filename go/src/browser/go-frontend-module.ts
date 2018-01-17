@@ -13,13 +13,11 @@ import { MenuContribution, CommandContribution } from '@theia/core';
 import { GoCommands } from './go-commands';
 import { interfaces } from 'inversify';
 import { GoMenuContribution } from './go-menu-contribution';
-import logViewContainerModule from './logview/log-view-module';
 
 export default new ContainerModule((bind: interfaces.Bind, unbind: interfaces.Unbind, isBound: interfaces.IsBound, rebind: interfaces.Rebind) => {
     bind(LanguageClientContribution).to(GoClientContribution).inSingletonScope();
     bind(MenuContribution).to(GoMenuContribution).inSingletonScope();
     bind(CommandContribution).to(GoCommandContribution).inSingletonScope();
 	bind(GoCommands).to(GoCommands).inSingletonScope();
-	logViewContainerModule.registry(bind, unbind, isBound, rebind);
 });
 
