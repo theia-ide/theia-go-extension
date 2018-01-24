@@ -5,7 +5,7 @@
  * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
  */
 
- import { Disposable } from "@theia/languages/lib/browser";
+import { Disposable } from "@theia/languages/lib/browser";
 import { injectable, inject } from "inversify";
 import { EditorManager, EditorWidget } from "@theia/editor/lib/browser";
 import { CommandRegistry } from "@theia/core";
@@ -13,7 +13,7 @@ import { CommandRegistry } from "@theia/core";
 @injectable()
 export class GoCommands {
 
-    private readonly titles: { [key: string]: string } = {
+    static readonly TITLES: { [key: string]: string } = {
         "go.gopath": "Current GOPATH",
         "go.add.tags": "Add Tags To Struct Fields",
         "go.remove.tags": "Remove Tags From Struct Fields",
@@ -70,7 +70,7 @@ export class GoCommands {
     }
 
     private getTitle(commandId: string): string | undefined {
-        const title = this.titles[commandId]
+        const title = GoCommands.TITLES[commandId]
         return title ? 'Go: ' + title : undefined
     }
 }
