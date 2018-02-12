@@ -5,11 +5,11 @@
  * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
  */
 
-import { CommandContribution, CommandRegistry, Command, KeybindingRegistry } from "@theia/core";
+import { CommandContribution, CommandRegistry, Command } from "@theia/core";
 import { EditorCommands } from "@theia/editor/lib/browser";
 import { injectable, inject } from "inversify";
 import { GoCommands } from './go-commands';
-import { QuickOpenItem, CommandQuickOpenItem, QuickOpenModel, QuickOpenService } from "@theia/core/lib/browser";
+import { QuickOpenItem, CommandQuickOpenItem, QuickOpenModel, QuickOpenService, KeybindingRegistry } from "@theia/core/lib/browser";
 
 export const SHOW_GO_REFERENCES = <Command> {
     id: 'go.editor.action.showReferences'
