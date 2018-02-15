@@ -65,10 +65,20 @@ Launch `Start Electron Backend` configuration from VS code.
 
 ## Publishing go-extension
 
-Create a npm user and login to the npm registry, [more on npm publishing](https://docs.npmjs.com/getting-started/publishing-npm-packages).
+Each change on master triggers a build on travis against Theia `next`.
+The resulting package is automatically published to [](http://www.npmjs.org) as `@theia/go:next`.
 
-    npm login
+For a release (or when Theia releases a new major), we have to build against Theia `latest`. 
+To achieve that
 
-Publish packages with lerna to update versions properly across local packages, [more on publishing with lerna](https://github.com/lerna/lerna#publish).
+	rm yarn.lock               # make sure to re-install deps
+	sh theia-version.sh latest # sets all dependencies to Theia to latest
+	yarn
+	yarn run publish:latest
+	rm yarn.lock               # make sure to re-install deps
+	sh theia-version.sh next   # reset Theia dependencies next
+	yarn
+	git add -A
+	git commit -m 'Bumped version number'
 
-    npx lerna publish
+	
