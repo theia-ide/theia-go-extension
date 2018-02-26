@@ -72,12 +72,12 @@ For a release (or when Theia releases a new major), we have to build against The
 To achieve that
 
 	rm yarn.lock               # make sure to re-install deps
-	sh theia-version.sh latest # sets all dependencies to Theia to latest
-	yarn
-	yarn run publish:latest
+	sh theia-version.sh latest # set all dependencies to Theia to 'latest'
+	yarn                       # rebuild (don't forget!)
+	yarn run publish:latest    # publish
 	rm yarn.lock               # make sure to re-install deps
-	sh theia-version.sh next   # reset Theia dependencies next
-	yarn
+	sh theia-version.sh next   # reset Theia dependencies to 'next'
+	yarn                       # make sure yarn-lock is reset to 'next'
 	git add -A
 	git commit -m 'Bumped version number'
 
