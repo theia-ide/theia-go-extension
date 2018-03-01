@@ -36,6 +36,10 @@ export class GoMenuContribution implements MenuContribution {
             commandId : "go.show.commands",
             label : "Go: Show All Commands..."
         })
+        menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
+            commandId : "go.fill.struct",
+            label : "Go: Fill struct"
+        })
     }
 }
 

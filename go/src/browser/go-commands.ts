@@ -41,7 +41,8 @@ export class GoCommands {
         "go.vet.workspace": "Vet Workspace",
         "go.build.package": "Build Current Package",
         "go.build.workspace": "Build Workspace",
-        "go.install.package": "Install Current Package"
+		"go.install.package": "Install Current Package",
+		"go.fill.struct": "Go: Fill struct"
     }
 
     constructor(@inject(CommandRegistry) private registry: CommandRegistry,
