@@ -13,11 +13,15 @@ import { MenuContribution, CommandContribution } from '@theia/core';
 import { GoCommands } from './go-commands';
 import { interfaces } from 'inversify';
 import { GoMenuContribution } from './go-menu-contribution';
+import { GoCallHierarchyService } from "./go-calhierarchy-service";
+import { CallHierarchyService } from "@theia/callhierarchy/lib/browser/callhierarchy-service";
 
 export default new ContainerModule((bind: interfaces.Bind, unbind: interfaces.Unbind, isBound: interfaces.IsBound, rebind: interfaces.Rebind) => {
     bind(LanguageClientContribution).to(GoClientContribution).inSingletonScope();
     bind(MenuContribution).to(GoMenuContribution).inSingletonScope();
     bind(CommandContribution).to(GoCommandContribution).inSingletonScope();
 	bind(GoCommands).to(GoCommands).inSingletonScope();
+	bind(GoCallHierarchyService).toSelf().inSingletonScope();
+	bind(CallHierarchyService).toDynamicValue(ctx => ctx.container.get(GoCallHierarchyService)).inSingletonScope();
 });
 

@@ -14,6 +14,7 @@
     "@theia/core": "next",
     "@theia/languages": "next",
     "@theia/monaco": "next",
+    "@theia/callhierarchy": "next",
     "go-language-server": "^0.1.0"
   },
   "devDependencies": {
