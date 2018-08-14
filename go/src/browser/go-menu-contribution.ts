@@ -13,31 +13,31 @@ import { injectable } from "inversify";
 export class GoMenuContribution implements MenuContribution {
     registerMenus(menus: MenuModelRegistry): void {
         menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
-            commandId : "go.add.tags",
+            commandId : "go.add.tags.client",
             label :"Go: Add Tags To Struct Fields"
         })
         menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
-            commandId : "go.remove.tags",
+            commandId : "go.remove.tags.client",
             label : "Go: Remove Tags From Struct Fields"
         })
         menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
-            commandId : "go.test.generate.function",
+            commandId : "go.test.generate.function.client",
             label : "Go: Generate Unit Tests For Function"
         })
         menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
-            commandId : "go.test.generate.file",
+            commandId : "go.test.generate.file.client",
             label : "Go: Generate Unit Tests For File"
         })
         menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
-            commandId : "go.test.generate.package",
+            commandId : "go.test.generate.package.client",
             label : "Go: Generate Unit Tests For Package"
         })
         menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
-            commandId : "go.show.commands",
+            commandId : "go.show.commands.client",
             label : "Go: Show All Commands..."
         })
         menus.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_go"), {
-            commandId : "go.fill.struct",
+            commandId : "go.fill.struct.client",
             label : "Go: Fill struct"
         })
     }

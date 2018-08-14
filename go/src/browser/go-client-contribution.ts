@@ -6,7 +6,6 @@
  */
 
 import { injectable, inject } from "inversify";
-import { Disposable } from "@theia/core";
 import { BaseLanguageClientContribution, Workspace, Languages, LanguageClientFactory } from '@theia/languages/lib/browser';
 import { GO_LANGUAGE_ID, GO_LANGUAGE_NAME } from '../common';
 import { GoCommands } from "./go-commands";
@@ -24,16 +23,13 @@ export class GoClientContribution extends BaseLanguageClientContribution {
 		@inject(GoCommands) protected readonly commands: GoCommands,
     ) {
 		super(workspace, languages, languageClientFactory);
+		commands.registerClientCommands();
     }
 
     protected get globPatterns() {
         return [
             '**/*.go'
         ];
-	}
-	
-	registerCommand(id: string, callback: (...args: any[]) => any, thisArg?: any): Disposable {
-		return this.commands.registerCommand(id, callback, thisArg);
 	}
 }
 
