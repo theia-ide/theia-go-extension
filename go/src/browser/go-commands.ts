@@ -5,10 +5,9 @@
  * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
  */
 
-import { Disposable } from "@theia/languages/lib/browser";
 import { injectable, inject } from "inversify";
 import { EditorManager, EditorWidget } from "@theia/editor/lib/browser";
-import { CommandRegistry } from "@theia/core";
+import { CommandRegistry, Disposable } from "@theia/core";
 
 @injectable()
 export class GoCommands {
@@ -42,26 +41,34 @@ export class GoCommands {
         "go.build.package": "Build Current Package",
         "go.build.workspace": "Build Workspace",
 		"go.install.package": "Install Current Package",
-		"go.fill.struct": "Go: Fill struct"
+		"go.fill.struct": "Fill struct"
     }
 
     constructor(@inject(CommandRegistry) private registry: CommandRegistry,
                 @inject(EditorManager) private editorManager: EditorManager) {
-    }
-
-    registerCommand(id: string, callback: (...args: any[]) => any, thisArg?: any): Disposable {
-        const boundCallback = callback.bind(thisArg);
-        return this.registry.registerCommand({ id: id, label: this.getTitle(id) }, {
-            execute: (...args: any[]) => {
-                const currentEditor = this.editorManager.currentEditor
-                if (this.isGoEditor(currentEditor)) {
-                    const selection = currentEditor.editor.selection
-                    boundCallback(...args, currentEditor.editor.document.uri, selection)
-                }
-            },
-            isVisible: () => this.isGoEditor(this.editorManager.currentEditor)
-        });
-    }
+	}
+	
+	registerClientCommands(): Disposable[] {
+		const disposables: Disposable[] = [];
+		for (const id in GoCommands.TITLES) {
+			const disposable = this.registry.registerCommand({ 
+				id: id + '.client', 
+				label: this.getTitle(id) 
+			}, {
+				execute: (...args: any[]) => {
+					const currentEditor = this.editorManager.currentEditor
+					if (this.isGoEditor(currentEditor)) {
+						const selection = currentEditor.editor.selection
+						this.registry.executeCommand(id, currentEditor.editor.document.uri, selection)
+					}
+				},
+				isVisible: () => this.isGoEditor(this.editorManager.currentEditor),
+				isEnabled: () => this.registry.getActiveHandler(id) !== undefined
+			})
+			disposables.push(disposable);
+		}
+		return disposables;
+	}
 
     private isGoEditor(widget: EditorWidget | undefined): widget is EditorWidget {
         if (widget)
