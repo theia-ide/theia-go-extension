@@ -5,17 +5,17 @@
   "keywords": [
     "theia-extension"
   ],
-  "version": "0.3.13",
+  "version": "0.3.14",
   "files": [
     "lib",
-	"src",
-	"data"
+    "src",
+    "data"
   ],
   "dependencies": {
+    "@theia/callhierarchy": "next",
     "@theia/core": "next",
     "@theia/languages": "next",
     "@theia/monaco": "next",
-    "@theia/callhierarchy": "next",
     "go-language-server": "^0.1.0"
   },
   "devDependencies": {
