@@ -49,7 +49,7 @@ export class GoGrammarContribution implements LanguageGrammarDefinitionContribut
         monaco.languages.setLanguageConfiguration(GO_LANGUAGE_ID, this.config);
 
         const goGrammar = require('../../data/go.tmLanguage.json');
-        registry.registerTextMateGrammarScope('source.go', {
+        registry.registerTextmateGrammarScope('source.go', {
             async getGrammarDefinition() {
                 return {
                     format: 'json',
