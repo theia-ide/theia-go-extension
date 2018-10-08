@@ -1,12 +1,12 @@
 {
   "private": true,
   "name": "browser-app",
-  "version": "0.3.15",
+  "version": "0.3.16",
   "dependencies": {
     "@theia/core": "next",
     "@theia/editor": "next",
     "@theia/filesystem": "next",
-    "@theia/go": "0.3.15",
+    "@theia/go": "0.3.16",
     "@theia/languages": "next",
     "@theia/markers": "next",
     "@theia/messages": "next",
