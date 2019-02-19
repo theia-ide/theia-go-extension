@@ -1,12 +1,12 @@
 {
   "private": true,
   "name": "electron-app",
-  "version": "0.3.17",
+  "version": "0.3.19",
   "dependencies": {
     "@theia/core": "next",
     "@theia/editor": "next",
     "@theia/filesystem": "next",
-    "@theia/go": "0.3.17",
+    "@theia/go": "0.3.19",
     "@theia/languages": "next",
     "@theia/markers": "next",
     "@theia/messages": "next",
