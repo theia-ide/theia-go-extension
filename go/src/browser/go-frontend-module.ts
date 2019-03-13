@@ -15,8 +15,6 @@ import { interfaces } from 'inversify';
 import { GoMenuContribution } from './go-menu-contribution';
 import { GoCallHierarchyService } from "./go-calhierarchy-service";
 import { CallHierarchyService } from "@theia/callhierarchy/lib/browser/callhierarchy-service";
-import { LanguageGrammarDefinitionContribution } from "@theia/monaco/lib/browser/textmate";
-import { GoGrammarContribution } from "./go-grammar-contribution";
 
 export default new ContainerModule((bind: interfaces.Bind, unbind: interfaces.Unbind, isBound: interfaces.IsBound, rebind: interfaces.Rebind) => {
     bind(LanguageClientContribution).to(GoClientContribution).inSingletonScope();
@@ -25,6 +23,5 @@ export default new ContainerModule((bind: interfaces.Bind, unbind: interfaces.Un
 	bind(GoCommands).to(GoCommands).inSingletonScope();
 	bind(GoCallHierarchyService).toSelf().inSingletonScope();
 	bind(CallHierarchyService).toDynamicValue(ctx => ctx.container.get(GoCallHierarchyService)).inSingletonScope();
-	bind(LanguageGrammarDefinitionContribution).to(GoGrammarContribution).inSingletonScope();
 });
 
